@@ -15,3 +15,17 @@ Le site publié sur https://nombrill.fr, hébergé par Netlify.
 1. Modifier les fichiers sources.
 2. Lancer `python3 build.py`.
 3. Enregistrer et pousser sur `main` : Netlify met nombrill.fr à jour en une minute environ.
+
+## Conseils (articles)
+
+Chaque article est un fichier `articles/AAAA-MM-JJ-mot-cle.html` qui commence par un bloc :
+
+```
+<!--
+titre: Titre de l'article
+description: Une phrase pour Google et la liste des conseils.
+date: AAAA-MM-JJ
+-->
+```
+
+suivi du texte en HTML simple (`<p>`, `<h2>`, `<ul>`, liens vers les pages du site). `python3 build.py` crée la page `conseils-mot-cle.html`, l'ajoute à la page Conseils et au plan du site.

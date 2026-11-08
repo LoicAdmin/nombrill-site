@@ -1858,3 +1858,22 @@ footer .launch .btn.primary:hover { background: var(--brand-deep); border-color:
 #lancement { scroll-margin-top: 96px; }
 .soon { margin: 12px 0 0; font-size: 14px; color: var(--muted); }
 .soon a { color: var(--ink); font-weight: 600; }
+
+/* Conseils */
+.legal-doc .articles {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  display: grid;
+  gap: 18px;
+}
+.legal-doc .articles a {
+  color: var(--ink);
+  font-size: 20px;
+}
+.legal-doc .date {
+  font-size: 14px;
+}
+.legal-doc .fin {
+  margin-top: 24px;
+}

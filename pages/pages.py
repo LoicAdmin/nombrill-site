@@ -450,3 +450,55 @@ PAGES = [
     ("404.html", "Page introuvable, NOMBRILL", NOTFOUND, {}),
     ("merci.html", "Merci pour votre commande, NOMBRILL", MERCI, {"body_attr": " data-clear-cart"}),
 ]
+
+
+# ---------- Conseils : articles écrits dans le dossier articles/ ----------
+import os as _os, re as _re, html as _html
+
+_ART_DIR = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))), "articles")
+_MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août",
+         "septembre", "octobre", "novembre", "décembre"]
+
+
+def _date_fr(d):
+    a, m, j = d.split("-")
+    return f"{int(j)} {_MOIS[int(m) - 1]} {a}"
+
+
+def _lire_articles():
+    out = []
+    if not _os.path.isdir(_ART_DIR):
+        return out
+    for n in sorted(_os.listdir(_ART_DIR), reverse=True):
+        if not n.endswith(".html"):
+            continue
+        txt = open(_os.path.join(_ART_DIR, n), encoding="utf-8").read()
+        m = _re.match(r"\s*<!--(.*?)-->(.*)", txt, _re.S)
+        if not m:
+            continue
+        meta = dict(l.split(":", 1) for l in m.group(1).strip().splitlines() if ":" in l)
+        meta = {k.strip(): v.strip() for k, v in meta.items()}
+        slug = _re.sub(r"^\d{4}-\d{2}-\d{2}-", "", n[:-5])
+        out.append({"fichier": f"conseils-{slug}.html", "titre": meta["titre"],
+                    "description": meta["description"], "date": meta["date"], "corps": m.group(2).strip()})
+    return out
+
+
+ARTICLES = _lire_articles()
+
+_liste = "".join(
+    f'<li><a href="{a["fichier"]}"><strong>{a["titre"]}</strong></a><br>'
+    f'<span>{_date_fr(a["date"])} · {a["description"]}</span></li>' for a in ARTICLES)
+CONSEILS = legal("conseils", "Conseils", "Conseils pour laver ses sols",
+                 "<p>Des réponses simples aux questions qu'on se pose en faisant le ménage.</p>"
+                 f'<ul class="articles">{_liste}</ul>')
+
+PAGES.append(("conseils.html", "Conseils pour laver ses sols, NOMBRILL", CONSEILS,
+              {"desc": "Conseils pratiques pour laver carrelage, lino et tomettes avec une raclette et une serpillière."}))
+for _a in ARTICLES:
+    _corps = (f'<p class="date">Publié le {_date_fr(_a["date"])}</p>{_a["corps"]}'
+              '<p class="fin"><a href="conseils.html">Tous les conseils</a> · '
+              '<a href="produit.html">Découvrir NOMBRILL Classic</a></p>')
+    PAGES.append((_a["fichier"], _html.escape(_a["titre"]) + ", NOMBRILL",
+                  legal("art", '<a href="conseils.html">Conseils</a> / ' + _a["titre"], _a["titre"], _corps),
+                  {"desc": _html.escape(_a["description"], quote=True)}))
