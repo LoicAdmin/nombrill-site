@@ -134,7 +134,7 @@
     var bodyMat = new THREE.MeshStandardMaterial({ color: 0x2a3330, roughness: 0.55, metalness: 0.1 });
     var rubberMat = new THREE.MeshStandardMaterial({ color: 0x15171c, roughness: 0.9 });
     var handleMat = new THREE.MeshStandardMaterial({ color: 0xc9ced8, roughness: 0.35, metalness: 0.6 });
-    var bar = new THREE.Mesh(new THREE.BoxGeometry(45, H - 2, HD * 2), bodyMat);
+    var bar = new THREE.Mesh(new THREE.BoxGeometry(45, H - 2.5, HD * 2 - 1), bodyMat); // un peu plus petite que le profil de la toile : ses arêtes ne traversent plus le tissu
     bar.position.y = 2 + (H - 2) / 2;
     bar.castShadow = true;
     raclette.add(bar);
