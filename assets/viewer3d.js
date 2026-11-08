@@ -2,7 +2,7 @@
    three.js r128 est chargé depuis cdnjs et jsDelivr au premier clic. */
 (function () {
   "use strict";
-  var MODEL = { cloth: "#EEEAE1", waffle: "#E0DACD", border: "#26332C", ring: "#F2C230" };
+  var MODEL = { cloth: "#EFE7D3", waffle: "#D9CCAE", border: "#1F4A35", ring: "#F2C230" };
   var stageEl = document.getElementById("stage");
   if (!stageEl) return;
   var canvas = document.getElementById("scene");
@@ -172,8 +172,14 @@
     tex.encoding = THREE.sRGBEncoding;
     tex.anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy());
 
+    var bumpCanvas = document.createElement("canvas");
+    bumpCanvas.width = 1200;
+    bumpCanvas.height = 1000;
+    var bumpTex = new THREE.CanvasTexture(bumpCanvas);
     var clothMat = new THREE.MeshStandardMaterial({
       map: tex,
+      bumpMap: bumpTex,
+      bumpScale: 0.35,
       roughness: 0.95,
       side: THREE.DoubleSide,
       alphaTest: 0.5,
@@ -206,16 +212,24 @@
       c.clip();
       c.fillStyle = m.cloth;
       c.fillRect(0, 0, w, h);
-      // gaufrage
-      var cell = 16;
+      // gaufrage nid d'abeille : alvéoles creuses, relief dans la carte de bosses
+      var cell = 14;
+      var b = bumpCanvas.getContext("2d");
+      b.fillStyle = "#ffffff";
+      b.fillRect(0, 0, w, h);
       for (var y = 0; y < h; y += cell) {
         for (var x = 0; x < w; x += cell) {
           c.fillStyle = m.waffle;
-          c.fillRect(x + 3, y + 3, cell - 6, cell - 6);
-          c.fillStyle = "rgba(255,255,255,0.35)";
-          c.fillRect(x + 3, y + 3, cell - 6, 2);
+          c.fillRect(x + 2.5, y + 2.5, cell - 5, cell - 5);
+          c.fillStyle = "rgba(0,0,0,0.06)";
+          c.fillRect(x + 2.5, y + 2.5, cell - 5, 2);
+          c.fillStyle = "rgba(255,255,255,0.45)";
+          c.fillRect(x + 2.5, y + cell - 4.5, cell - 5, 2);
+          b.fillStyle = "#5a5a5a";
+          b.fillRect(x + 3, y + 3, cell - 6, cell - 6);
         }
       }
+      bumpTex.needsUpdate = true;
       // bordure biais
       c.lineWidth = 1.1 * px;
       c.strokeStyle = m.border;
@@ -235,6 +249,24 @@
         c.beginPath();
         c.moveTo(sx, h / 2 - 3 * px);
         c.lineTo(sx, h / 2 + 3 * px);
+        c.stroke();
+      });
+      // fente centrale bordée de biais, du trou au milieu d'un grand côté, et 3 pressions
+      c.strokeStyle = m.border;
+      c.lineCap = "butt";
+      c.lineWidth = 0.9 * px;
+      c.beginPath();
+      c.moveTo(w / 2, h / 2);
+      c.lineTo(w / 2, h);
+      c.stroke();
+      [12, 17, 22].forEach(function (d) {
+        var sy = h / 2 + d * px;
+        c.beginPath();
+        c.arc(w / 2 - 0.9 * px, sy, 0.55 * px, 0, Math.PI * 2);
+        c.fillStyle = "#FAFAF7";
+        c.fill();
+        c.lineWidth = 2;
+        c.strokeStyle = "rgba(0,0,0,0.25)";
         c.stroke();
       });
       // couronne
