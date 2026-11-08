@@ -29,7 +29,7 @@ INDEX = f"""
     <div class="hero-visual">
       <div class="stage" id="stage" data-mode="hero">
         <canvas id="scene" aria-label="NOMBRILL Classic en 3D, sur une raclette, qui tourne lentement"></canvas>
-        <div class="poster" id="poster"><video class="photo" poster="img/photo.webp" width="800" height="596" autoplay muted loop playsinline preload="metadata" aria-label="Vidéo de présentation : NOMBRILL Classic posée sur une raclette, vue de face puis de trois quarts"><source src="img/presentation.webm" type="video/webm"><source src="img/presentation.mp4" type="video/mp4"></video></div>
+        <div class="poster" id="poster"><video class="photo" poster="img/photo.webp" width="768" height="576" autoplay muted loop playsinline preload="metadata" aria-label="Vidéo de présentation : NOMBRILL Classic posée sur une raclette, vue de face puis de trois quarts"><source src="img/presentation.mp4?v=2" type="video/mp4"><source src="img/presentation.webm?v=2" type="video/webm"></video></div>
         <p class="fallback" id="fallback" hidden></p>
       </div>
       <a class="badge360" href="pose.html">Voir en 3D</a>
