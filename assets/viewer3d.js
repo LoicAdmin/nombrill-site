@@ -2,7 +2,7 @@
    three.js r128 est chargé depuis cdnjs et jsDelivr au premier clic. */
 (function () {
   "use strict";
-  var MODEL = { cloth: "#EFE7D3", waffle: "#D9CCAE", border: "#1F4A35", ring: "#F2C230" };
+  var MODEL = { cloth: "#EFE7D3", waffle: "#E3D8C0", border: "#1F4A35", ring: "#F2C230" };
   var stageEl = document.getElementById("stage");
   if (!stageEl) return;
   var canvas = document.getElementById("scene");
@@ -179,7 +179,7 @@
     var clothMat = new THREE.MeshStandardMaterial({
       map: tex,
       bumpMap: bumpTex,
-      bumpScale: 0.35,
+      bumpScale: 0.18,
       roughness: 0.95,
       side: THREE.DoubleSide,
       alphaTest: 0.5,
@@ -225,10 +225,20 @@
           c.fillRect(x + 2.5, y + 2.5, cell - 5, 2);
           c.fillStyle = "rgba(255,255,255,0.45)";
           c.fillRect(x + 2.5, y + cell - 4.5, cell - 5, 2);
-          b.fillStyle = "#5a5a5a";
+          b.fillStyle = "#8a8a8a";
           b.fillRect(x + 3, y + 3, cell - 6, cell - 6);
         }
       }
+      // couronne et biais lisses : pas de gaufrage sous la couronne ni sur les bords
+      b.fillStyle = "#ffffff";
+      b.beginPath();
+      b.arc(w / 2, h / 2, 4 * px, 0, Math.PI * 2);
+      b.fill();
+      b.fillRect(w / 2 - 0.5 * px, h / 2, 1 * px, h / 2);
+      b.lineWidth = 1.2 * px;
+      b.strokeStyle = "#ffffff";
+      roundRect(b, 0.55 * px, 0.55 * px, w - 1.1 * px, h - 1.1 * px, 2.5 * px);
+      b.stroke();
       bumpTex.needsUpdate = true;
       // bordure biais
       c.lineWidth = 1.1 * px;

@@ -177,7 +177,7 @@ NOTFOUND = """
 """
 
 PAGES = [
-    ("index.html", "NOMBRILL, la serpillière pour raclette qui se pose sans dévisser", INDEX, {"scripts": '<script src="assets/viewer3d.js?v=20261108"></script>'}),
+    ("index.html", "NOMBRILL, la serpillière pour raclette qui se pose sans dévisser", INDEX, {"scripts": '<script src="assets/viewer3d.js?v=20261108b"></script>'}),
 ]
 
 
@@ -430,12 +430,12 @@ MERCI = """
 """
 
 PAGES = [
-    ("index.html", "NOMBRILL, la serpillière pour raclette qui se pose sans dévisser", INDEX, {"scripts": '<script src="assets/viewer3d.js?v=20261108"></script>'}),
+    ("index.html", "NOMBRILL, la serpillière pour raclette qui se pose sans dévisser", INDEX, {"scripts": '<script src="assets/viewer3d.js?v=20261108b"></script>'}),
     ("produit.html", "NOMBRILL Classic, serpillière pour raclette 60 × 50 cm", PRODUIT,
      {"scripts": '<script src="assets/produit.js"></script>',
       "desc": "NOMBRILL Classic : serpillière pour raclette en coton gaufré, 60 × 50 cm, avec œillet central, fente à pressions et collier de 20 à 28 mm."}),
     ("pose.html", "La pose de NOMBRILL en quatre gestes", POSE,
-     {"scripts": '<script src="assets/viewer3d.js?v=20261108"></script>',
+     {"scripts": '<script src="assets/viewer3d.js?v=20261108b"></script>',
       "desc": "Clipser, bloquer, rabattre, essorer : la pose de NOMBRILL en 3D, sans dévisser le manche."}),
     ("compatibilite.html", "Compatibilité de NOMBRILL avec votre raclette", COMPAT,
      {"scripts": '<script src="assets/compat.js"></script>',
