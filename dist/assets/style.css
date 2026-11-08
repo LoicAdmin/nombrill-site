@@ -1887,3 +1887,5 @@ footer .launch .btn.primary:hover { background: var(--brand-deep); border-color:
   object-fit: cover;
   border-radius: 24px;
 }
+a.badge360 { color: var(--ink); text-decoration: none; z-index: 2; }
+a.badge360:hover { background: var(--stone); }
