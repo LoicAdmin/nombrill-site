@@ -317,6 +317,7 @@ COMPAT = f"""
 
 MODELS = [
     ("classic", "flat", "Classic", "Disponible au lancement", "Foyers", "12,90 €", "Coton gaufré, 60 × 50 cm, pour le ménage de tous les jours.", True),
+    ("pack", "photo2", "Pack de démarrage", "Au lancement", "Pour bien démarrer", "29,90 €", "Le collier à la taille de votre manche et 3 toiles Classic : une en service, une au lavage, une d'avance. Ensuite, des recharges de 2 toiles à 17,90 €.", False),
     ("micro", "g_micro", "Duo Micro", "Plus tard", "Sols fragiles", "14,90 €", "Microfibre double face, 60 × 50 cm. On la retourne sur le manche sans l'enlever, pour le parquet vitrifié et le béton ciré.", False),
     ("pro", "g_pro", "Pro", "Plus tard", "Agents d'entretien", "34,90 € les 4", "70 × 60 cm, 450 g/m², collier renforcé et bordure au code couleur d'hygiène, pour les raclettes jusqu'à 55 cm.", False),
     ("dose", "g_dose", "Dose", "Plus tard", "Lavage malin", "12,90 €", "Une poche autour de l'œillet accueille une pastille de savon noir, qui se dilue pendant le lavage.", False),
@@ -326,7 +327,7 @@ rows = ""
 for mid, img, name, tag, who, price, text, live in MODELS:
     act = '<a class="btn primary" href="produit.html">Choisir ma taille</a>' if live else ""
     rows += f"""<article class="model-row{' live' if live else ''}" id="{mid}" data-reveal>
-      <div class="frame"><img src="img/{img}.webp" width="900" height="700" loading="lazy" alt="Toile NOMBRILL {name} vue de dessus"></div>
+      <div class="frame"><img src="img/{img}.webp" width="900" height="700" loading="lazy" alt="NOMBRILL {name}"></div>
       <div class="info"><span class="tag" data-status="{mid}">{tag}</span><span class="eyebrow">{who}</span><h2>{name}</h2><p data-desc="{mid}">{text}</p><div class="price"><span data-price="{mid}" data-unit>{price}</span> <small>prix visé</small></div><p class="stock" data-stock="{mid}" hidden></p>{act}</div>
     </article>"""
 
