@@ -29,10 +29,10 @@ INDEX = f"""
     <div class="hero-visual">
       <div class="stage" id="stage" data-mode="hero">
         <canvas id="scene" aria-label="NOMBRILL Classic en 3D, sur une raclette, qui tourne lentement"></canvas>
-        <div class="poster" id="poster"><img src="img/hero.webp" width="1400" height="1200" alt="NOMBRILL Classic posée sur une raclette, le manche passé dans l'œillet central et bloqué par le collier jaune"></div>
+        <div class="poster" id="poster"><img class="photo" src="img/photo.webp" width="696" height="597" alt="Visuel de présentation : NOMBRILL Classic posée sur une raclette, le manche passé dans l'œillet central et bloqué par le collier jaune"></div>
         <p class="fallback" id="fallback" hidden></p>
       </div>
-      <span class="badge360" aria-hidden="true">Faites-la tourner</span>
+      <a class="badge360" href="pose.html">Voir en 3D</a>
     </div>
   </div>
 </section>
@@ -177,7 +177,7 @@ NOTFOUND = """
 """
 
 PAGES = [
-    ("index.html", "NOMBRILL, la serpillière pour raclette qui se pose sans dévisser", INDEX, {"scripts": '<script src="assets/viewer3d.js?v=20261108b"></script>'}),
+    ("index.html", "NOMBRILL, la serpillière pour raclette qui se pose sans dévisser", INDEX, {"scripts": '<script src="assets/viewer3d.js?v=20261108c"></script>'}),
 ]
 
 
@@ -254,7 +254,7 @@ POSE = f"""
   <div class="wrap">
     <div class="stage" id="stage">
       <canvas id="scene" aria-label="NOMBRILL Classic en 3D, que l'on peut faire tourner"></canvas>
-      <div class="poster" id="poster"><img src="img/hero.webp" alt="" width="1400" height="1200"><button type="button" class="btn primary" id="load3d">Afficher en 3D</button></div>
+      <div class="poster" id="poster"><img src="img/photo.webp" alt="" width="696" height="597"><button type="button" class="btn primary" id="load3d">Afficher en 3D</button></div>
       <p class="fallback" id="fallback" hidden>La vue 3D n'a pas pu démarrer sur cet appareil. Les quatre gestes sont décrits plus bas.</p>
       <p class="hint" id="stage-hint" hidden>Faites glisser pour tourner</p>
       <div class="caption" id="demo-caption" hidden aria-live="polite"><span class="num" id="demo-num">1</span><span class="demo-steps"><i></i><i></i><i></i><i></i></span><span id="demo-text"></span></div>
@@ -430,12 +430,12 @@ MERCI = """
 """
 
 PAGES = [
-    ("index.html", "NOMBRILL, la serpillière pour raclette qui se pose sans dévisser", INDEX, {"scripts": '<script src="assets/viewer3d.js?v=20261108b"></script>'}),
+    ("index.html", "NOMBRILL, la serpillière pour raclette qui se pose sans dévisser", INDEX, {"scripts": '<script src="assets/viewer3d.js?v=20261108c"></script>'}),
     ("produit.html", "NOMBRILL Classic, serpillière pour raclette 60 × 50 cm", PRODUIT,
      {"scripts": '<script src="assets/produit.js"></script>',
       "desc": "NOMBRILL Classic : serpillière pour raclette en coton gaufré, 60 × 50 cm, avec œillet central, fente à pressions et collier de 20 à 28 mm."}),
     ("pose.html", "La pose de NOMBRILL en quatre gestes", POSE,
-     {"scripts": '<script src="assets/viewer3d.js?v=20261108b"></script>',
+     {"scripts": '<script src="assets/viewer3d.js?v=20261108c"></script>',
       "desc": "Clipser, bloquer, rabattre, essorer : la pose de NOMBRILL en 3D, sans dévisser le manche."}),
     ("compatibilite.html", "Compatibilité de NOMBRILL avec votre raclette", COMPAT,
      {"scripts": '<script src="assets/compat.js"></script>',

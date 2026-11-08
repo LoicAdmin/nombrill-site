@@ -1877,3 +1877,13 @@ footer .launch .btn.primary:hover { background: var(--brand-deep); border-color:
 .legal-doc .fin {
   margin-top: 24px;
 }
+
+/* Accueil : visuel réaliste à la place de la 3D */
+.hero-visual .stage .poster img.photo {
+  mix-blend-mode: normal;
+  -webkit-mask-image: none;
+  mask-image: none;
+  animation: none;
+  object-fit: cover;
+  border-radius: 24px;
+}

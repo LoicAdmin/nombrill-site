@@ -559,7 +559,8 @@
     ensure3D().then(function () {
       runDemo();
     });
-  } else if (window.matchMedia("(min-width: 768px)").matches) {
+  } else if (!HERO && window.matchMedia("(min-width: 768px)").matches) {
+    // l'accueil montre le visuel réaliste ; la 3D se charge d'office sur la page La pose
     ensure3D();
   }
 })();
