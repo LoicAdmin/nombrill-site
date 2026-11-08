@@ -29,7 +29,7 @@ INDEX = f"""
     <div class="hero-visual">
       <div class="stage" id="stage" data-mode="hero">
         <canvas id="scene" aria-label="NOMBRILL Classic en 3D, sur une raclette, qui tourne lentement"></canvas>
-        <div class="poster" id="poster"><img class="photo" src="img/photo.webp" width="696" height="597" alt="Visuel de présentation : NOMBRILL Classic posée sur une raclette, le manche passé dans l'œillet central et bloqué par le collier jaune"></div>
+        <div class="poster" id="poster"><video class="photo" poster="img/photo.webp" width="800" height="596" autoplay muted loop playsinline preload="metadata" aria-label="Vidéo de présentation : NOMBRILL Classic posée sur une raclette, vue de face puis de trois quarts"><source src="img/presentation.webm" type="video/webm"><source src="img/presentation.mp4" type="video/mp4"></video></div>
         <p class="fallback" id="fallback" hidden></p>
       </div>
       <a class="badge360" href="pose.html">Voir en 3D</a>
@@ -198,7 +198,7 @@ PRODUIT = f"""
         <div class="frame main"><img id="main-img" src="img/photo.webp" width="696" height="597" alt="Visuel de présentation : NOMBRILL Classic en coton gaufré posée sur une raclette, collier jaune autour du manche"></div>
         <div class="thumbs" aria-label="Autres vues">
           <button type="button" aria-pressed="true" data-src="img/photo.webp" data-alt="Visuel de présentation : NOMBRILL Classic en coton gaufré posée sur une raclette, collier jaune autour du manche"><img src="img/photo.webp" alt="" width="140" height="120"><span class="sr">Visuel de présentation</span></button>
-          <button type="button" aria-pressed="false" data-src="img/hero.webp" data-alt="NOMBRILL Classic posée sur une raclette, le manche passé dans l'œillet central"><img src="img/hero.webp" alt="" width="140" height="120"><span class="sr">Sur la raclette</span></button>
+          <button type="button" aria-pressed="false" data-src="img/photo2.webp" data-alt="Visuel de présentation : la toile vue de trois quarts, avec la fente bordée de vert et ses pressions"><img src="img/photo2.webp" alt="" width="140" height="120"><span class="sr">Vue de trois quarts</span></button>
           <button type="button" aria-pressed="false" data-src="img/flat.webp" data-alt="La toile à plat, vue de dessus, avec l'œillet, la fente à pressions et les fentes latérales"><img src="img/flat.webp" alt="" width="140" height="100"><span class="sr">À plat</span></button>
           <button type="button" aria-pressed="false" data-src="img/detail.webp" data-alt="Gros plan sur l'œillet renforcé et le collier jaune serré autour du manche"><img src="img/detail.webp" alt="" width="120" height="120"><span class="sr">Gros plan sur l'œillet</span></button>
         </div>

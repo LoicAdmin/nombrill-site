@@ -57,3 +57,12 @@
   }, { rootMargin: "0px 0px -10% 0px", threshold: 0.12 });
   items.forEach(function (el) { io.observe(el); });
 })();
+
+/* Vidéo de l'accueil : à l'arrêt si le visiteur a demandé de réduire les animations */
+(function () {
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  document.querySelectorAll("video[autoplay]").forEach(function (v) {
+    v.removeAttribute("autoplay");
+    v.pause();
+  });
+})();
