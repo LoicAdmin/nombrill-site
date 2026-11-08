@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compatibilité de NOMBRILL avec votre raclette</title>
+<meta name="description" content="Vérifiez si NOMBRILL va sur votre raclette et quelle taille de collier choisir.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&amp;family=Instrument+Sans:wght@400..700&amp;display=swap">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="canonical" href="https://nombrill.fr/compatibilite.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NOMBRILL">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://nombrill.fr/compatibilite.html">
+<meta property="og:title" content="Compatibilité de NOMBRILL avec votre raclette">
+<meta property="og:description" content="Vérifiez si NOMBRILL va sur votre raclette et quelle taille de collier choisir.">
+<meta property="og:image" content="https://nombrill.fr/img/partage.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<div class="annonce" id="annonce" hidden><span></span></div>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="NOMBRILL, accueil"><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="13" fill="#F2C230"/><circle cx="14" cy="14" r="5.2" fill="#16201B"/><circle cx="14" cy="14" r="2.2" fill="#F5F2EA"/></svg>NOMBRILL</a>
+    <nav class="nav" aria-label="Navigation principale"><a href="produit.html">Le produit</a><a href="pose.html">La pose</a><a href="compatibilite.html" aria-current="page">Compatibilité</a><a href="gamme.html">La gamme</a><a href="aide.html">Aide</a></nav>
+    <button type="button" class="cart-btn" data-cart-open aria-label="Ouvrir le panier"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2.2l2.2 11h10.8l2-8H6.3"/><circle cx="9.5" cy="19.5" r="1.4"/><circle cx="17" cy="19.5" r="1.4"/></svg><span class="label">Panier</span><span class="count" data-cart-count>0</span></button>
+    <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Ouvrir le menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Menu"><a href="produit.html">Le produit</a><a href="pose.html">La pose</a><a href="compatibilite.html">Compatibilité</a><a href="gamme.html">La gamme</a><a href="aide.html">Aide</a><a class="btn primary" href="produit.html">Acheter NOMBRILL Classic</a></nav>
+<main id="contenu">
+
+<section class="page-head" aria-labelledby="h-compat">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> / Compatibilité</nav>
+    <h1 id="h-compat">Elle va sur votre raclette ?</h1>
+    <p>Décrivez votre raclette : la réponse donne le modèle et la taille du collier. Pour le diamètre, mesurez le manche au pied à coulisse, ou faites-en le tour avec une ficelle et divisez par 3,14.</p>
+  </div>
+</section>
+<section style="padding-bottom:112px">
+  <div class="wrap compat">
+    <form id="compat-form" novalidate>
+      <fieldset><legend>Comment le manche est-il fixé ?</legend><div class="choices">
+        <label><input type="radio" name="fix" value="visse" checked><span>Vissé au centre</span></label>
+        <label><input type="radio" name="fix" value="fixe"><span>Fixé au centre</span></label>
+        <label><input type="radio" name="fix" value="etrier"><span>Deux branches (étrier)</span></label>
+        <label><input type="radio" name="fix" value="cote"><span>Sur le côté</span></label>
+      </div></fieldset>
+      <fieldset><legend>Largeur de la raclette</legend><div class="choices">
+        <label><input type="radio" name="width" value="45" checked><span>35 à 45 cm</span></label>
+        <label><input type="radio" name="width" value="55"><span>46 à 55 cm</span></label>
+        <label><input type="radio" name="width" value="more"><span>Plus de 55 cm</span></label>
+      </div></fieldset>
+      <fieldset><legend><label for="dia">Diamètre du manche</label></legend>
+        <div class="dia"><input type="range" id="dia" min="16" max="32" step="0.5" value="23.5"><output id="dia-out" for="dia">23,5 mm</output></div>
+        <p class="hintline">Les manches de raclette courants font entre 22 et 25 mm.</p>
+      </fieldset>
+    </form>
+    <div class="verdict" id="verdict" data-state="ok" aria-live="polite">
+      <span class="pill" id="v-pill">Compatible</span>
+      <h2 id="v-title">NOMBRILL Classic</h2>
+      <p id="v-text"></p>
+      <dl><dt>Collier</dt><dd id="v-collar">24 mm</dd><dt>Pose</dt><dd id="v-pose"></dd></dl>
+      <a class="btn primary" id="v-go" href="produit.html">Choisir Classic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <section class="launch" id="lancement" aria-labelledby="lancement-t">
+      <div>
+        <h2 id="lancement-t">Prévenez-moi du lancement</h2>
+        <p>La vente ouvre dans quelques semaines. Laissez votre e-mail : vous recevrez un seul message, le jour de l'ouverture.</p>
+      </div>
+      <form name="lancement" method="POST" action="/" data-netlify="true" netlify-honeypot="site-web" data-launch>
+        <input type="hidden" name="form-name" value="lancement">
+        <p class="hp"><label>Ne pas remplir <input name="site-web" tabindex="-1" autocomplete="off"></label></p>
+        <label class="sr" for="lancement-mail">Votre e-mail</label>
+        <div class="row"><input id="lancement-mail" type="email" name="email" required placeholder="vous@exemple.fr" autocomplete="email"><button class="btn primary" type="submit">Me prévenir</button></div>
+        <p class="fine">Votre adresse sert uniquement à vous annoncer l'ouverture, puis elle est supprimée. <a href="confidentialite.html">En savoir plus</a></p>
+        <p class="ok" role="status" hidden>C'est noté, merci ! Vous serez prévenu le jour de l'ouverture.</p>
+      </form>
+    </section>
+    <div class="grid">
+      <div>
+        <a class="logo" href="index.html"><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="13" fill="#F2C230"/><circle cx="14" cy="14" r="5.2" fill="#16201B"/><circle cx="14" cy="14" r="2.2" fill="#F5F2EA"/></svg>NOMBRILL</a>
+        <p class="tag">La serpillière pour raclette qui tient par le centre. Lancement prévu fin 2026 : les prix affichés sont les prix de lancement.</p>
+      </div>
+      <div><h2>Produit</h2><ul><li><a href="produit.html">NOMBRILL Classic</a></li><li><a href="gamme.html">La gamme</a></li><li><a href="pose.html">La pose</a></li></ul></div>
+      <div><h2>Aide</h2><ul><li><a href="compatibilite.html">Compatibilité</a></li><li><a href="aide.html">Questions fréquentes</a></li><li><a href="retractation.html">Retours</a></li></ul></div>
+      <div><h2>Informations</h2><ul><li><a href="cgv.html">Conditions de vente</a></li><li><a href="mentions.html">Mentions légales</a></li><li><a href="confidentialite.html">Données personnelles</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 NOMBRILL</span><span>Images : rendus 3D du prototype NOMBRILL Classic</span><span>Modèle déposé, INPI n° 20264220</span></div>
+  </div>
+</footer>
+<script src="assets/boutique.js"></script>
+<script src="assets/contenu.js"></script>
+<script src="assets/anim.js"></script>
+<script src="assets/compat.js"></script>
+</body>
+</html>
