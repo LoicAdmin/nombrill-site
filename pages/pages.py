@@ -195,12 +195,12 @@ PRODUIT = f"""
     {crumbs("NOMBRILL Classic")}
     <div class="split" style="margin-top:24px">
       <div class="gallery">
-        <div class="frame main"><img id="main-img" src="img/hero.webp" width="1400" height="1200" alt="NOMBRILL Classic posée sur une raclette, le manche passé dans l'œillet central"></div>
+        <div class="frame main"><img id="main-img" src="img/photo.webp" width="696" height="597" alt="Visuel de présentation : NOMBRILL Classic en coton gaufré posée sur une raclette, collier jaune autour du manche"></div>
         <div class="thumbs" aria-label="Autres vues">
-          <button type="button" aria-pressed="true" data-src="img/hero.webp" data-alt="NOMBRILL Classic posée sur une raclette, le manche passé dans l'œillet central"><img src="img/hero.webp" alt="" width="140" height="120"><span class="sr">Sur la raclette</span></button>
+          <button type="button" aria-pressed="true" data-src="img/photo.webp" data-alt="Visuel de présentation : NOMBRILL Classic en coton gaufré posée sur une raclette, collier jaune autour du manche"><img src="img/photo.webp" alt="" width="140" height="120"><span class="sr">Visuel de présentation</span></button>
+          <button type="button" aria-pressed="false" data-src="img/hero.webp" data-alt="NOMBRILL Classic posée sur une raclette, le manche passé dans l'œillet central"><img src="img/hero.webp" alt="" width="140" height="120"><span class="sr">Sur la raclette</span></button>
           <button type="button" aria-pressed="false" data-src="img/flat.webp" data-alt="La toile à plat, vue de dessus, avec l'œillet, la fente à pressions et les fentes latérales"><img src="img/flat.webp" alt="" width="140" height="100"><span class="sr">À plat</span></button>
           <button type="button" aria-pressed="false" data-src="img/detail.webp" data-alt="Gros plan sur l'œillet renforcé et le collier jaune serré autour du manche"><img src="img/detail.webp" alt="" width="120" height="120"><span class="sr">Gros plan sur l'œillet</span></button>
-          <button type="button" aria-pressed="false" data-src="img/three.webp" data-alt="La toile posée au sol, vue de trois quarts"><img src="img/three.webp" alt="" width="140" height="100"><span class="sr">Vue de trois quarts</span></button>
         </div>
       </div>
       <div class="buybox">
@@ -401,7 +401,7 @@ MENTIONS = legal("mentions", "Mentions légales", "Mentions légales", """
 <h2>Hébergement</h2><p>Netlify, Inc., 2325 3rd Street, Suite 296, San Francisco, CA 94107, États-Unis, <a href="https://www.netlify.com">netlify.com</a>.</p>
 <h2>Contact</h2><p><a href="mailto:contact@nombrill.fr">contact@nombrill.fr</a></p>
 <h2>Propriété intellectuelle</h2><p>Le modèle NOMBRILL est déposé à l'INPI (dépôt de dessin et modèle n° 20264220 du 8 novembre 2026). Toute reproduction du produit est interdite sans autorisation.</p>
-<h2>Images</h2><p>Les images du produit sont des rendus 3D du prototype NOMBRILL Classic.</p>
+<h2>Images</h2><p>Les images du produit sont des rendus 3D et des visuels de présentation du prototype NOMBRILL Classic, créés par ordinateur. Le produit livré peut présenter de légères différences.</p>
 """)
 
 CONFID = legal("donnees", "Données personnelles", "Données personnelles", """
